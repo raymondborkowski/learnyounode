@@ -18,7 +18,8 @@ console.log(contentArr.length - 1);
 */
 
 // My First Async I/O
-const readDir = require('./readDir.js')
+const readDir = require('./readDir.js');
+const httpClient = require('./httpClient');
 /* fs.readFile(process.argv[2], 'utf8', (err, dataStr) => {
   if (err) console.log(err);
   const arr = dataStr.split(/\n/);
@@ -38,12 +39,18 @@ const readDir = require('./readDir.js')
 
 // Make it Modular
 
-readDir(process.argv[2], process.argv[3], (err, data) => {
-	if (err) { throw err; }
-	else { 
-		data.forEach((file) => {
-			console.log(file);
-		});
-	}
+// readDir(process.argv[2], process.argv[3], (err, data) => {
+// 	if (err) { throw err; }
+// 	else { 
+// 		data.forEach((file) => {
+// 			console.log(file);
+// 		});
+// 	}
+// });
+
+// HTTP Stuff
+
+httpClient(process.argv[2], (data) => {
+	console.log(data);
 });
 
