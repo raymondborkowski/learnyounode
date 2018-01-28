@@ -20,6 +20,14 @@ console.log(contentArr.length - 1);
 // My First Async I/O
 const readDir = require('./readDir.js');
 const httpClient = require('./httpClient');
+const httpCollect = require('./httpCollect');
+const httpCollectMulti = require('./httpCollectMulti');
+const tcp = require('./tcp');
+const http = require('./http');
+const httpUpper = require('./httpUpper');
+const httpJSON = require('./httpJSON');
+
+
 /* fs.readFile(process.argv[2], 'utf8', (err, dataStr) => {
   if (err) console.log(err);
   const arr = dataStr.split(/\n/);
@@ -50,7 +58,20 @@ const httpClient = require('./httpClient');
 
 // HTTP Stuff
 
-httpClient(process.argv[2], (data) => {
-	console.log(data);
-});
+// httpClient(process.argv[2], (data) => {
+// 	data.forEach((val) => {
+// 		console.log(val);
+// 	});
+// });
 
+// httpCollect(process.argv[2], (data) => {
+// 	console.log(data.length);
+// 	console.log(data);
+// });
+
+
+//httpCollectMulti();
+//tcp();
+//http();
+// httpUpper();
+httpJSON();
